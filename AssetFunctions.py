@@ -119,18 +119,18 @@ def addAnimationTrackToSequencer():
     # https://docs.unrealengine.com/5.0/en-US/python-scripting-in-sequencer-in-unreal-engine/
     # Adding Actors.
     actor_system = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
-    # To add an actor from your current Level for Sequencer to possess.
-    # try:
-    #     actor_selected = actor_system.get_selected_level_actors()[0]
-    #     unreal.log(f'selected actor: {actor_selected}')
-    #     actor_binding = sequencer.add_possessable(actor_selected)
-    #     unreal.log(f'actor_binding: {actor_binding}')
-    # except IndexError:
-    #     unreal.log('no actor selected')
-    #     actor_selected = None
-
-    # Instead of possessing a current actor from your Level, Sequencer can spawn new ones for the duration of the sequence.
     try:
+        # To add an actor from your current Level for Sequencer to possess.
+        # try:
+        #     actor_selected = actor_system.get_selected_level_actors()[0]
+        #     unreal.log(f'selected actor: {actor_selected}')
+        #     actor_binding = sequencer.add_possessable(actor_selected)
+        #     unreal.log(f'actor_binding: {actor_binding}')
+        # except IndexError:
+        #     unreal.log('no actor selected')
+        #     actor_selected = None
+
+        # Instead of possessing a current actor from your Level, Sequencer can spawn new ones for the duration of the sequence.
         actor_selected = actor_system.get_selected_level_actors()[0]
         unreal.log(f'selected actor: {actor_selected}')
         actor_binding = sequencer.add_spawnable_from_instance(actor_selected)
